@@ -1,10 +1,11 @@
+// ¤Þ¤J¨ç¼Æ 
 #include<iostream>
 #include<cstdlib>
 #include<ctime> 
 using namespace std;
 
 int main(){
-	int money=0,lottery=0;
+	int money=0,lottery=0; 
 	int choose;
 	srand(time(NULL));
 	while(true){
