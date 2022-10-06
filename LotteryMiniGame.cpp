@@ -1,55 +1,58 @@
-// ¤Ş¤J¨ç¼Æ 
+// å¼•å…¥å‡½æ•¸ 
 #include<iostream>
 #include<cstdlib>
 #include<ctime> 
 using namespace std;
 
 int main(){
-	int money=0,lottery=0; 
-	int choose;
+	int money=0,lottery=0; 	// é‡‘éŒ¢èˆ‡æ¨‚é€æ•¸åˆå€¼ç‚º0
+	int choose;		// é¸é …
 	srand(time(NULL));
 	while(true){
-		int lottery_num=0,lottery_result=0;
-		cout<<"Åwªï¨Ó¨ì¼Ö³z¡A1~10ÀH¾÷¿ï¸¹"<<endl;
-		cout<<"¨Cª`50¤¸"<<endl; 
-		cout<<"±z²{¦b¦³"<<money<<"¤¸"<<endl; 
-		cout<<"1) Àx­È100¤¸"<<endl; 
-		cout<<"2) ¤U¤@ª`"<<endl;
-		cout<<"3) §I¼ú"<<endl; 
-		cout<<"4) Â÷¶}"<<endl<<endl;
+		int lottery_num=0,lottery_result=0;	// æ¨‚é€è™Ÿç¢¼
+		// UI
+		cout<<"æ­¡è¿ä¾†åˆ°æ¨‚é€ï¼Œ1~10éš¨æ©Ÿé¸è™Ÿ"<<endl;
+		cout<<"æ¯æ³¨50å…ƒ"<<endl; 
+		cout<<"æ‚¨ç¾åœ¨æœ‰"<<money<<"å…ƒ"<<endl; 
+		cout<<"1) å„²å€¼100å…ƒ"<<endl; 
+		cout<<"2) ä¸‹ä¸€æ³¨"<<endl;
+		cout<<"3) å…Œç"<<endl; 
+		cout<<"4) é›¢é–‹"<<endl<<endl;
+		// è¼¸å…¥
 		cin>>choose;
+		// åˆ¤æ–·
 		switch(choose){
 			case 1:
 				money=money+100;
-				cout<<"¥[­È§¹¦¨"<<endl<<endl;
+				cout<<"åŠ å€¼å®Œæˆ"<<endl<<endl;
 				break;
 			case 2:
 				if(money>=50){
 					money=money-50;
 					lottery=lottery+1;
-					cout<<"¤Uª`§¹¦¨"<<endl;
+					cout<<"ä¸‹æ³¨å®Œæˆ"<<endl;
 					lottery_num=1+rand()%(10-1+1);
-					cout<<"§Aªº¸¹½X¬O¡G"<<lottery_num<<endl<<endl; 
+					cout<<"ä½ çš„è™Ÿç¢¼æ˜¯ï¼š"<<lottery_num<<endl<<endl; 
 				}else{
-					cout<<"§Aªº¿ú¤£°÷¤Uª`¤F"<<endl<<endl;
+					cout<<"ä½ çš„éŒ¢ä¸å¤ ä¸‹æ³¨äº†"<<endl<<endl;
 				}
 				break;
 			case 3:
 				if(lottery<1){
-					cout<<"§A²{¦b¨S¦³¼Ö³z"<<endl<<endl;
+					cout<<"ä½ ç¾åœ¨æ²’æœ‰æ¨‚é€"<<endl<<endl;
 				}else{
 					lottery=lottery-1;
 					lottery_result=1+rand()%(10-1+1);
-					cout<<"¶}¼ú¸¹½X¡G"<<lottery_result<<endl;
+					cout<<"é–‹çè™Ÿç¢¼ï¼š"<<lottery_result<<endl;
 					if(lottery_num==lottery_result){
-						cout<<"®¥³ß¤¤¼ú"<<endl<<endl; 
+						cout<<"æ­å–œä¸­ç"<<endl<<endl; 
 					}else{
-						cout<<"¦A±µ¦A¼F"<<endl; 
+						cout<<"å†æ¥å†å²"<<endl; 
 					}
 				}	
 				break;
 			case 4:
-				cout<<"ÁÂÁÂ¥úÁ{"<<endl<<endl;
+				cout<<"è¬è¬å…‰è‡¨"<<endl<<endl;
 				return 0;
 			default:
 				break;
