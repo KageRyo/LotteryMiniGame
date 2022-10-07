@@ -9,10 +9,13 @@ int main(){
 	char choose;		// 選項
 	srand(time(NULL));
 	while(true){
-		int lottery_num=0,lottery_result=0;	// 樂透號碼
+		int lottery_num,lottery_result;	// 樂透號碼
+		int odds=0;
+		// 賠率隨機1~10
+		odds=1+rand()%(10-1+1);
 		// UI
 		cout<<"歡迎來到樂透，1~10隨機選號。"<<endl;
-		cout<<"每注50元，賠率10。"<<endl; 
+		cout<<"每注50元，賠率"<<odds<<"。"<<endl; 
 		cout<<"您現在有"<<money<<"元"<<endl; 
 		cout<<"1) 儲值100元"<<endl; 
 		cout<<"2) 下一注"<<endl;
@@ -48,8 +51,8 @@ int main(){
 					lottery_result=1+rand()%(10-1+1);
 					cout<<"開獎號碼："<<lottery_result<<endl;
 					if(lottery_num==lottery_result){
-						cout<<"恭喜中獎500元"<<endl<<endl;
-						money=money+500;
+						cout<<"恭喜中獎"<<odds*50<<"元"<<endl<<endl;
+						money=money+(odds*50);
 					}else{
 						cout<<"再接再厲"<<endl<<endl; 
 					}
