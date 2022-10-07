@@ -22,11 +22,11 @@ int main(){
 		cin>>choose;
 		// 判斷
 		switch(choose){
-			case 1:
+			case 1:	// 儲值功能
 				money=money+100;
 				cout<<"加值完成"<<endl<<endl;
 				break;
-			case 2:
+			case 2:	// 下注功能
 				if(money>=50){
 					money=money-50;
 					lottery=lottery+1;
@@ -37,7 +37,7 @@ int main(){
 					cout<<"你的錢不夠下注了"<<endl<<endl;
 				}
 				break;
-			case 3:
+			case 3: // 兌獎
 				if(lottery<1){
 					cout<<"你現在沒有樂透"<<endl<<endl;
 				}else{
@@ -51,7 +51,7 @@ int main(){
 					}
 				}	
 				break;
-			case 4:
+			case 4: // 退出程式
 				cout<<"謝謝光臨"<<endl<<endl;
 				return 0;
 			default:
